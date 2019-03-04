@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   strcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/04 16:11:41 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/04 18:16:21 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/04 17:20:03 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/04 18:15:42 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int		ft_strcmp(char *s1, char *s2)
 {
-	int		i;
-	int		res;
-	int		sign;
-
+	int i;
+	
 	i = 0;
-	res = 0;
-	sign = 1;
-	while (str[i] != '\0')
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		while (str[i] == 0)
-			i += 1;
-		if (str[i] == '-')
-		{
-			sign = -1;
-			i += 1;
-		}
-		else if (str[i] == '+')
-			i += 1;
-		while (str[i] >= '0' && str[i] <= '9')
-		{
-			res = res * 10 + str[i];
-			i += 1;
-		}
-		return (res * sign);
+		i += 1;
 	}
-	return (0);
+	if (s1[i] == '\0' && s2[i] == '\0')
+		return (0);
+	else if (s1[i] == '\0' && s2[i] != '\0')
+		return (-1);
+	else
+		return (1);
 }
