@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcmp.c                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/04 17:20:03 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/05 20:19:40 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/05 12:57:09 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/05 20:23:31 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
-{
-	int i;
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
+int		ft_strncmp(char *s1, char *s2, unsigned int n);
+
+int		main(int argc, char **argv)
+{
+	if (argc > 1)
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		else
-			i += 1;
+		printf("or_strcmp: %d\n", strncmp(argv[1], argv[2], atoi(argv[3])));
+		printf("ft_strcmp: %d\n", ft_strncmp(argv[1], argv[2], atoi(argv[3])));
 	}
 	return (0);
 }
