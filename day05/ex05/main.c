@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/04 16:44:41 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/05 17:28:51 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/05 12:57:09 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/05 16:52:19 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int	i;
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-	i = 0;
-	while (i < n && src[i] != '\0')
+char	*ft_strstr(char *str, char *to_find);
+
+int		main(int argc, char **argv)
+{
+	if (argc > 1)
 	{
-		dest[i] = src[i];
-		i = i + 1;
+		printf("or_strstr: %s\n", strstr(argv[1], argv[2]));
+		printf("ft_strstr: %s\n", ft_strstr(argv[1], argv[2]));
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-	}
-	return (dest);
+	return (0);
 }
