@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/05 12:57:09 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/05 20:53:51 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/05 20:54:58 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/05 20:58:48 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-char	*ft_strupcase(char *str);
-
-int		main(int argc, char **argv)
+char	*ft_strlowcase(char *str)
 {
-	if (argc > 1)
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		printf("ft_strupcase: %s\n", ft_strupcase(argv[1]));
+		if (str[i] >= 65 && str[i] <= 90)
+		{
+			str[i] = str[i] + 32;
+		}
+		i++;
 	}
-	return (0);
+	return (str);
 }
