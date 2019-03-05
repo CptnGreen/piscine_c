@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/04 16:24:46 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/05 12:50:23 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/04 16:44:41 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/05 13:59:55 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *str);
-
-int		main(int argc, char **argv)
+char	*ft_strcpy(char *dest, char *src)
 {
-	if (argc > 1)
+	int i;
+	int l;
+
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		ft_putstr(argv[1]);
+		dest[i] = '\0';
+		i = i + 1;
 	}
-	return (0);
+	l = i;
+	i = 0;
+	while (src[i] != '\0' && i < l)
+	{
+		dest[i] = src[i];
+		i = i + 1;
+	}
+	return (dest);
 }

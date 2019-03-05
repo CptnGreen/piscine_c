@@ -5,18 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/04 16:24:46 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/05 12:50:23 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/05 12:57:09 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/05 14:01:29 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putstr(char *str);
+#include <string.h>
+#include <stdio.h>
+
+char	*ft_strcpy(char *dest, char *src);
 
 int		main(int argc, char **argv)
 {
 	if (argc > 1)
 	{
-		ft_putstr(argv[1]);
+		printf("or_strcpy: %s\n", strcpy(argv[1], argv[2]));
+		printf("ft_strcpy: %s\n", ft_strcpy(argv[1], argv[2]));
 	}
 	return (0);
 }
