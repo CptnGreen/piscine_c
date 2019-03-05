@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/05 12:57:09 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/05 15:02:39 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/04 16:44:41 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/04 23:25:37 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-
-int		ft_atoi(char *str);
-
-int		main(int argc, char **argv)
+char	*ft_strcpy(char *dest, char *src, unsigned int n)
 {
-	printf("or_atoi: %d\n", atoi("  	\v\n\f\r\t23"));
-	printf("ft_atoi: %d\n", ft_atoi("  	\v\n\f\r\t23"));
-	if (argc > 1)
+	unsigned int	i;
+	unsigned int	l;
+	
+	i = 0;
+	while (dest[i] != '\0')
 	{
-		printf("or_atoi: %d\n", atoi(argv[1]));
-		printf("ft_atoi: %d\n", ft_atoi(argv[1]));
+		dest[i] = '\0';
+		i = i + 1;
 	}
-	return (0);
+	l = i;
+	i = 0;
+	while (i < n && src[i] != '\0' && i < l)
+	{
+		dest[i] = src[i];
+		i = i + 1;
+	}	
+	return (dest);
 }
