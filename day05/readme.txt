@@ -2,7 +2,7 @@ ex00	-	checked (putstr)
 ex01	-	checked (putnbr)
 ex02	-	checked (atoi)	
 ex03	-	checked (strcpy)
-ex04	-	
+ex04	-	checked (strncpy)
 ex05	-	
 ex06	-	
 ex07	-	

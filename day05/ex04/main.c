@@ -6,23 +6,22 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 12:57:09 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/05 15:58:13 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/05 16:04:55 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int		ft_atoi(char *str);
+char	*ft_strncpy(char *dest, char *src, unsigned int n);
 
 int		main(int argc, char **argv)
 {
-	printf("or_atoi: %d\n", atoi("  	\v\n\f\r\t23"));
-	printf("ft_atoi: %d\n", ft_atoi("  	\v\n\f\r\t23"));
 	if (argc > 1)
 	{
-		printf("or_atoi: %d\n", atoi(argv[1]));
-		printf("ft_atoi: %d\n", ft_atoi(argv[1]));
+		printf("or_strNcpy: %s\n", strncpy(argv[1], argv[2], atoi(argv[3])));
+		printf("ft_strNcpy: %s\n", ft_strncpy(argv[1], argv[2], atoi(argv[3])));
 	}
 	return (0);
 }
