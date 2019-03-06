@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/06 16:24:05 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/06 16:50:56 by slisandr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 void	ft_putchar(char c);
 
 int	main(int argc, char **argv)
@@ -27,20 +39,33 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-char	find_min(char *array, int len)
+char	*find_min_wrd(char **params, int n)
 {
-	int	i;
-	int	min;
+	int		i;
+	char	*min_wrd;
 
 	i = 0;
-	min = 256;
-	while (i < len)
+	min_wrd[0] = 255;
+	while (i < n)
 	{
-		if (array[i] < min)
-			min = array[i];
-		i++;	
+		if (ft_strcmp(params[i], min_wrd) < 0)
+			min_wrd = ft_strcpy(min_wrd, params[i]);
+		i++;
 	}
-	return (min);
+	return (min_wrd);
+}
+
+void	ft_pustr_nl(char *str)
+{
+	int index;
+
+	index = 0;
+	while (str[index] != '\0')
+	{
+		ft_putchar(str[index]);
+		index++;
+	}
+	ft_putchar('\n');
 }
 
 void	swap_two_elements(char *array, int n1, int n2)

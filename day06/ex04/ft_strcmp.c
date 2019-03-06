@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   strcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 15:11:50 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/06 16:42:01 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/04 17:20:03 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/06 16:50:58 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int		main(int argc, char **argv)
+int		ft_strcmp(char *s1, char *s2)
 {
-	int	i;
-	int	n;
+	int i;
 
 	i = 0;
-	n = 1;
-	if (argc > 1)
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		while (n < argc)
-		{
-			while (argv[n][i] != '\0')
-			{
-				ft_putchar(argv[n][i]);
-				i = i + 1;
-			}
-			ft_putchar('\n');
-			n = n + 1;
-			i = 0;
-		}
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		else
+			i += 1;
 	}
 	return (0);
 }
