@@ -1,38 +1,43 @@
-CC=gcc
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: slisandr <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/03/11 21:55:59 by slisandr          #+#    #+#              #
+#    Updated: 2019/03/11 23:20:17 by slisandr         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-#Flags
-CFLAGS=-Wall -Werror -Wextra -I./includes
-LDFLAGS=
-AR=ar
+#Outputs
+ALIB = libft.a
+EXEC = program
 
-#Folders
-SRC_DIR=./srcs/
+#Compilation flags
+CFLAGS = -Wall -Werror -Wextra
 
-#Paths to files
-SOURCES=$(wildcard ./srcs/*.c)
+#Source dir, files and paths
+SRC_DIR = ./srcs/
+SRC_FILES = ft_putchar.c ft_putstr.c ft_swap.c ft_strcmp.c ft_strlen.c
+SRC_PATHS = $(SRC_DIR)ft_putchar.c $(SRC_DIR)ft_putstr.c $(SRC_DIR)ft_swap.c $(SRC_DIR)ft_strcmp.c $(SRC_DIR)ft_strlen.c
 
-#Objects
-OBJECTS=$(SOURCES:.c=.o)
+OBJECTS = $(SRC_FILES:.c=.o)
 
-#Output
-EXECUTABLE=program
-ALIB=libft.a
+.PHONY: all clean fclean re exec
 
-.PHONY: all clean fclean re
+all: $(ALIB)
 
-all: $(ALIB) $(EXECUTABLE) 
-
-$(EXECUTABLE): $(ALIB)
-	$(CC) $(CFLAGS) main.c -L. -lft -o $@
+exec: $(ALIB)
+	gcc -I./includes/ main.c -L. -lft -o $(EXEC) 
 $(ALIB): $(OBJECTS)
-	$(AR) rc $@ $(OBJECTS)
-	rm -rf $(OBJECTS)
-	ranlib $@
-$(OBJECTS): $(SOURCES)
-	$(CC) $(CFLAGS) -c $< -o $@
+	ar rc $@ $(OBJECTS)
+$(OBJECTS): $(SRC_PATHS)
+	norminette -R CheckForbiddenSourceHeader $(SRC_PATHS) ./includes/libft.h
+	gcc $(CFLAGS) -c $(SRC_PATHS)
 
-clean:
-	rm -rf $(OBJECTS)
+clean: 
+	rm -rf *.o srcs/*.o
 fclean: clean
-	rm -rf $(ALIB) $(EXECUTABLE) a.out
+	rm -rf $(ALIB) $(EXEC)
 re: fclean all
