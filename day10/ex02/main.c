@@ -8,16 +8,15 @@ int	mult_by_2(int a);
 
 int	main(void)
 {
-	int	i;
-	int	array[LEN] = {1, 2, 3, 4, 5};
-	int	*res;
-	
+	int		i;
+	int		*res;
+	int		array[LEN] = {1, 2, 3, 4, 5};
+
 	i = 0;
-	//res = (int *)malloc(sizeof(int) * LEN);
 	res = ft_map(array, 5, &mult_by_2);
 	while (i < 5)
 	{
-		printf("%d\n", res[i]);		
+		printf("%d\n", res[i]);
 		i++;
 	}
 	free(res);

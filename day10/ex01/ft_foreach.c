@@ -6,11 +6,11 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:32:50 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/12 18:32:54 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/12 19:10:56 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void(*f)(int))
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int	i;
 

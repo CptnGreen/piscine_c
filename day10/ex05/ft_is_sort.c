@@ -6,13 +6,13 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:45:09 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/12 18:53:06 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/12 19:16:07 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		intcmp(int a, int b);
 
-int		ft_is_sort(int *tab, int length, int(*f)(int, int))
+int		ft_is_sort(int *tab, int length, int (*f)(int, int))
 {
 	int		i;
 

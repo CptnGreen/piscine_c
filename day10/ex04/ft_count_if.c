@@ -6,11 +6,11 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:31:41 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/12 18:33:09 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/12 19:15:42 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_count_if(char **tab, int(*f)(char *))
+int		ft_count_if(char **tab, int (*f)(char *))
 {
 	int	i;
 	int	j;
