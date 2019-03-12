@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 18:31:41 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/12 20:05:29 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/12 19:47:19 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/12 20:06:15 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_count_if(char **tab, int (*f)(char *))
-{
-	int	i;
-	int	j;
+#include <stdio.h>
 
-	i = 0;
-	j = 0;
-	while (tab[i] != 0)
+int		ft_strlen(char *str);
+int		ft_count_if(char **tab, int (*f)(char *));
+
+int		main(int argc, char **argv)
+{
+	if (argc > 1)
 	{
-		if (f(tab[i]) == 1)
-			j++;
-		i++;
+		printf("ft_count_if(): %d\n", ft_count_if(argv, &ft_strlen));
 	}
-	return (j);
+	return (0);
 }
