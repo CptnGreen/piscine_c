@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sort.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 18:45:09 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/12 19:24:35 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/12 19:19:09 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/12 19:23:34 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		intcmp(int a, int b);
+#include <stdio.h>
+#include <stdlib.h>
 
-int		ft_is_sort(int *tab, int length, int (*f)(int, int))
+#define LEN 5
+
+int		ft_intcmp(int a, int b);
+int		ft_is_sort(int *tab, int length, int (*f)(int, int));
+
+int		main(int argc, char **argv)
 {
 	int		i;
+	int		array[LEN];
 
 	i = 0;
-	while (i < length - 1)
+	if (argc == LEN + 1)
 	{
-		if (f(tab[i], tab[i + 1]) > 0)
-			return (0);
-		else
+		while (i < LEN)
+		{
+			array[i] = atoi(argv[i + 1]);
 			i++;
+		}
+		printf("ft_is_sort(): %d\n", ft_is_sort(array, LEN, &ft_intcmp));
 	}
-	return (1);
 }
