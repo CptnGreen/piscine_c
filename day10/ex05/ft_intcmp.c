@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_intcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 18:32:21 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/12 18:32:32 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/12 18:48:44 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/12 18:49:45 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int		*ft_map(int *tab, int length, int(*f)(int))
+int		ft_intcmp(int a, int b)
 {
-	int	i;
-	int	*res;
-
-	i = 0;
-	res = (int *)malloc(sizeof(int) * length);
-	while (i < length)
-	{
-		res[i] = f(tab[i]);
-		i++;
-	}
-	return (res);
+	return (a - b);
 }

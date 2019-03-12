@@ -1,11 +1,23 @@
-int	ft_count_if(char **tab, int(*f)(char *))
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/12 18:31:41 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/12 18:33:09 by slisandr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+int		ft_count_if(char **tab, int(*f)(char *))
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (f(tab[i]) != 0)
+	while (tab[i] != 0)
 	{
 		if (f(tab[i]) == 1)
 		{
@@ -13,5 +25,7 @@ int	ft_count_if(char **tab, int(*f)(char *))
 				j++;
 			return (j);
 		}
+		i++;
 	}
+	return (-1);
 }

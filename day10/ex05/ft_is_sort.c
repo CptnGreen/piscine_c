@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_map.c                                           :+:      :+:    :+:   */
+/*   ft_is_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 18:32:21 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/12 18:32:32 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/12 18:45:09 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/12 18:53:06 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+int		intcmp(int a, int b);
 
-int		*ft_map(int *tab, int length, int(*f)(int))
+int		ft_is_sort(int *tab, int length, int(*f)(int, int))
 {
-	int	i;
-	int	*res;
+	int		i;
 
 	i = 0;
-	res = (int *)malloc(sizeof(int) * length);
-	while (i < length)
+	while (i < length - 1)
 	{
-		res[i] = f(tab[i]);
-		i++;
+		if (f(tab[i], tab[i + 1]) > 0)
+			return (0);
+		else
+			i++;
 	}
-	return (res);
 }
