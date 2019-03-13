@@ -6,7 +6,7 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 21:55:43 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/13 21:56:23 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/13 22:29:45 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,12 @@ t_list		*ft_list_push_params(int ac, char **av)
 	int			i;
 
 	i = 0;
-	if (av[i])
+	while (i < ac)
 	{
-		first_elem = ft_create_elem(av[0]);
+		new_node = ft_create_elem(av[i]);
+		new_node->next = first_elem;
+		first_elem = new_node;
 		i++;
-		while (av[i] != 0)
-		{
-			new_node = ft_create_elem(av[i]);
-			new_node->next = first_elem;
-			first_elem = new_node;
-			i++;
-		}
 	}
 	return (first_elem);
 }
