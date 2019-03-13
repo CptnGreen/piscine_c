@@ -6,7 +6,7 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/13 18:00:56 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/13 18:01:33 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/13 21:47:51 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	main(int argc, char **argv)
 {
 	t_list	*first_elem;
-	int	i;
+	int		i;
 
 	first_elem = ft_create_elem("first");
 	i = 1;
