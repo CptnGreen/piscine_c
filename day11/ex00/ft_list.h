@@ -1,12 +1,24 @@
-#ifndef _FT_LIST_H_
-# define _FT_LIST_H_
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/13 21:22:44 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/13 21:23:13 by slisandr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
 typedef struct			s_list
 {
-	struct s_list		*next;
+	struct s_list	*next;
 	void			*data;
-}				t_list;
+}						t_list;
 
-t_list		*ft_create_elem(void *data);
+t_list					*ft_create_elem(void *data);
 
 #endif

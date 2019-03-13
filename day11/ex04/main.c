@@ -4,6 +4,7 @@
 int	main(int argc, char **argv)
 {
 	t_list	*first_elem;
+	t_list	*node;
 	int	i;
 
 	first_elem = ft_create_elem("first");
@@ -16,6 +17,7 @@ int	main(int argc, char **argv)
 			i++;
 		}
 	}
-	printf("ft_list_size(): %d\n", ft_list_size(first_elem));
+	node = ft_list_last(first_elem);
+	printf("ft_list_last(): %s\n", node->data);
 	return (0);
 }
