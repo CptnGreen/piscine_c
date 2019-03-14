@@ -1,6 +1,18 @@
-CFLSGS = -Wall -Werror -Wextra
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: slisandr <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/03/14 17:36:24 by slisandr          #+#    #+#              #
+#    Updated: 2019/03/14 20:07:17 by slisandr         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SOURCES = ./ft_display_file.c ./ft_putstr.c
+CFLAGS = -Wall -Werror -Wextra
+
+SOURCES = ft_display_file.c ft_putstr.c
 HEADERS = header.h
 OBJECTS = $(SOURCES:.c=.o)
 TRASH = *.o *.h.gch
@@ -11,10 +23,9 @@ EXEC = ft_display_file
 
 all: $(EXEC)
 
-$(EXEC): $(OBJECTS) $(HEADERS)
-	gcc -I. main.c $(OBJECTS) $(HEADERS) -o $@
-$(OBJECTS): $(SOURCES)
-	gcc $(FLAGS) -c $(SOURCES)
+$(EXEC): $(SOURCES) $(HEADERS)
+	gcc -I. main.c $(SOURCES) $(HEADERS)
+	mv a.out $(EXEC)
 clean: 
 	rm -f $(TRASH)
 fclean: clean
@@ -22,4 +33,4 @@ fclean: clean
 re: fclean all
 
 norm: $(SOURCES) $(HEADERS)
-	norminette -R CheckForbiddenSourceHeader $<
+	norminette -R CheckForbiddenSourceHeader $(SOURCES) $(HEADERS)

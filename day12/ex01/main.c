@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/14 20:11:04 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/14 20:13:55 by slisandr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 int	main(int argc, char **argv)
@@ -7,7 +19,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 	{
-		ft_putstr("File name missing.\n");	
+		ft_putstr("File name missing.\n");
 		return (1);
 	}
 	i = 1;
