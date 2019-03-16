@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   is_rush.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/03 16:39:43 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/03 21:17:53 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/16 18:22:13 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/16 21:24:24 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "header.h"
 
-void	rush(int x, int y);
-
-int		main(void)
+void	is_rush(char *str)
 {
-	rush(5, 5);
-	return (0);
+	int		width;
+	int		height;
+
+	width = get_width(str);
+	height = get_height(str);
+	if (width == 0 || height == 0)
+	{
+		ft_putstr("Zero dimensions.");
+		return ;
+	}
+	is_rush00(str, width, height);
+	//is_rush01(str, width, height);
+	//is_rush02(str, width, height);
+	//is_rush03(str, width, height);
 }

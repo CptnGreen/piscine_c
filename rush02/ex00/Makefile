@@ -6,11 +6,11 @@
 #    By: slisandr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/16 17:53:40 by slisandr          #+#    #+#              #
-#    Updated: 2019/03/16 19:54:44 by slisandr         ###   ########.fr        #
+#    Updated: 2019/03/16 21:18:52 by slisandr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SOURCES = *.[ch] 
+SOURCES = ./srcs/*.c 
 HEADERS = header.h
 EXEC = colle-2
 TRASH = 
@@ -23,7 +23,7 @@ NFLAGS = -R CheckForbiddenSourceHeader
 all: $(EXEC)
 
 $(EXEC): $(SOURCES)
-	gcc $(CFLAGS) $(SOURCES)
+	gcc -I. $(CFLAGS) $(SOURCES)
 	mv a.out $(EXEC)
 
 clean:
