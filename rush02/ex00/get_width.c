@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_width.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/03 16:39:43 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/03 21:17:53 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/16 19:22:24 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/16 19:23:23 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "header.h"
 
-void	rush(int x, int y);
-
-int		main(void)
+int		get_width(char *str)
 {
-	rush(5, 5);
-	return (0);
+	int		i;
+
+	i = 0;
+	while (str[i] != '\n')
+		i++;
+	return (i);
 }

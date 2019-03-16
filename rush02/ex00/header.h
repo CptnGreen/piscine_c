@@ -6,7 +6,7 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 19:08:01 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 19:11:26 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/16 19:24:00 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void		is_rush01(char *str);
 void		is_rush02(char *str);
 void		is_rush03(char *str);
 void		is_rush04(char *str);
+
+int			get_width(char *str);
+int			get_height(char *str);
 
 void		ft_putchar(char c);
 void		ft_putstr(char *str);
