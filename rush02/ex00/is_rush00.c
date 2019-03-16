@@ -6,36 +6,36 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 20:50:24 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 19:17:24 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/16 20:19:41 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	is_rush00(int x, int y)
+void	is_rush00(char *str, int w, int h)
 {
 	int column;
 	int row;
 
 	row = 1;
-	while (row <= y)
+	while (row <= h)
 	{
 		column = 1;
-		while (column <= x)
+		while (column <= w)
 		{
-			if ((row == 1 && column == 1) || (row == y && column == 1))
-				ft_putchar('o');
-			else if ((row == y && column == x) || (row == 1 && column == x))
-				ft_putchar('o');
-			else if (row == 1 || row == y)
-				ft_putchar('-');
-			else if (column == 1 || column == x)
-				ft_putchar('|');
+			if ((row == 1 && column == 1) || (row == h && column == 1))
+				is_symbol(str[row * w + column], 'o') ? : (return ;);
+			else if ((row == h && column == w) || (row == 1 && column == w))
+				is_symbol(str[row * w + column], 'o') ? : return ;
+			else if (row == 1 || row == h)
+				is_symbol(str[row * w + column], '-') ? : return ;
+			else if (column == 1 || column == w)
+				is_symbol(str[row * w + column], '|') ? : return ;
 			else
-				ft_putchar(' ');
+				is_symbol(str[row * w + column], ' ') ? : return ;
 			column++;
 		}
-		ft_putchar('\n');
+		is_symbol(str[row * w + column], '\n') ? : return ;
 		row++;
 	}
 }

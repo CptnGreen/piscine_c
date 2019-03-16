@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_height.c                                       :+:      :+:    :+:   */
+/*   is_symbol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/16 19:33:18 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 19:35:23 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/16 19:42:40 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/16 19:44:33 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		get_height(char *str)
+int		is_symbol(char c, char symb)
 {
-	int		i;
-	int		rows;
-
-	i = 0;
-	rows = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == '\n')
-			rows++;
-	}
-	return (rows);
+	if (c == symb)
+		return (1);
+	else
+		return (0);
 }
