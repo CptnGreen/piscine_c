@@ -6,7 +6,7 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 19:08:01 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 21:27:50 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/16 23:15:27 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 void		is_rush(char *str);
 void		is_rush00(char *str, int x, int y);

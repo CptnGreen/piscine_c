@@ -6,7 +6,7 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 20:50:24 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 21:13:35 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/16 23:59:29 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,33 @@ void	is_rush00(char *str, int w, int h)
 	int column;
 	int row;
 	int	exit_code;
+	int	i;
 
 	row = 1;
-	while (row <= h)
+	column = 1;
+	exit_code = 1;
+	i = 0;
+	while (str[i] != '\0')
 	{
-		column = 1;
-		while (column <= w)
-		{
-			if ((row == 1 && column == 1) || (row == h && column == 1))
-				exit_code = is_symbol(str[row * w + column], 'o'); 
-			else if ((row == h && column == w) || (row == 1 && column == w))
-				exit_code = is_symbol(str[row * w + column], 'o');
-			else if (row == 1 || row == h)
-				exit_code = is_symbol(str[row * w + column], '-');
-			else if (column == 1 || column == w)
-				exit_code = is_symbol(str[row * w + column], '|');
-			else
-				exit_code = is_symbol(str[row * w + column], ' ');
-			column++;
-		}
-		exit_code = is_symbol(str[row * w + column], '\n');
-		if (exit_code != 1)
-			break;
-		row++;
+		if ((row == 1 && column == 1) || (row == h && column == 1))
+			exit_code *= is_symbol(str[i], 'o'); 
+		else if ((row == h && column == w) || (row == 1 && column == w))
+			exit_code *= is_symbol(str[i], 'o');
+		else if ((row == 1 || row == h) && (column != w + 1))
+			exit_code *= is_symbol(str[i], '-');
+		else if (column == 1 || column == w)
+			exit_code *= is_symbol(str[i], '|');
+		else if (column == w + 1)
+			exit_code *= is_symbol(str[i], '\n');
+		else
+			exit_code *= is_symbol(str[i], ' ');
+		printf("str[%d] = %c, column = %d, row = %d, exit_code = %d\n", i, str[i], column, row, exit_code);
+		i++;
+		row = (i / (w + 1)) + 1;
+		if (i % (w + 1) == 0)
+			column = 1;
+		else
+			column = (i % (w + 1)) + 1; 
 	}
 	if (exit_code == 1)
 	{
@@ -52,3 +56,4 @@ void	is_rush00(char *str, int w, int h)
 	else
 		ft_putstr("no rush");
 }
+

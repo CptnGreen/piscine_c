@@ -6,11 +6,13 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 18:22:13 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 21:24:24 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/16 22:10:01 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+#define	SYM 'a'
 
 void	is_rush(char *str)
 {
@@ -18,7 +20,9 @@ void	is_rush(char *str)
 	int		height;
 
 	width = get_width(str);
+	printf("width = %d\n", width);
 	height = get_height(str);
+	printf("height = %d\n", height);
 	if (width == 0 || height == 0)
 	{
 		ft_putstr("Zero dimensions.");
