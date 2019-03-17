@@ -12,8 +12,6 @@
 
 #include "header.h"
 
-#define	SYM 'a'
-
 void	is_rush(char *str)
 {
 	int		width;

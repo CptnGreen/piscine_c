@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+int	ft_putchar(char c);
 
 void	rush(int x, int y)
 {

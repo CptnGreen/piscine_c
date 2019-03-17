@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_height.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/16 19:33:18 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 23:55:00 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/16 21:14:08 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/16 21:15:14 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+void	ft_putchar(char c);
 
-int		get_height(char *str)
+void	ft_putstr(char *str)
 {
 	int		i;
-	int		rows;
 
 	i = 0;
-	rows = 1;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '\n')
-			rows++;
+		ft_putchar(str[i]);
 		i++;
 	}
-	return (--rows);
 }

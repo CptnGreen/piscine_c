@@ -26,18 +26,17 @@ void	is_rush00(char *str, int w, int h)
 	while (str[i] != '\0')
 	{
 		if ((row == 1 && column == 1) || (row == h && column == 1))
-			exit_code *= is_symbol(str[i], 'o'); 
+			exit_code *= (str[i] == 'o');
 		else if ((row == h && column == w) || (row == 1 && column == w))
-			exit_code *= is_symbol(str[i], 'o');
+			exit_code *= (str[i] == 'o');
 		else if ((row == 1 || row == h) && (column != w + 1))
-			exit_code *= is_symbol(str[i], '-');
+			exit_code *= (str[i] == '-');
 		else if (column == 1 || column == w)
-			exit_code *= is_symbol(str[i], '|');
+			exit_code *= (str[i] == '|');
 		else if (column == w + 1)
-			exit_code *= is_symbol(str[i], '\n');
+			exit_code *= (str[i] == '\n');
 		else
-			exit_code *= is_symbol(str[i], ' ');
-		printf("str[%d] = %c, column = %d, row = %d, exit_code = %d\n", i, str[i], column, row, exit_code);
+			exit_code *= (str[i] == ' ');
 		i++;
 		row = (i / (w + 1)) + 1;
 		if (i % (w + 1) == 0)

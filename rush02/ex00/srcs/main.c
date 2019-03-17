@@ -16,11 +16,9 @@
 
 int		main(void)
 {
-	char	buf[BUF_SIZE + 1];
-	int		ret;
+	char		buf[BUF_SIZE + 1];
 
-	ret = read(0, buf, BUF_SIZE);
-	printf("ret = %d\n", ret);
+	read(1, buf, BUF_SIZE);
 	is_rush(buf);
 	ft_putstr("\n");
 	return (0);
