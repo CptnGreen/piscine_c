@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_result.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/16 21:22:32 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/17 22:50:21 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/17 20:48:12 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/17 20:51:12 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-#define BUF_SIZE 10000
-
-int		main(void)
+void	print_result(int width, int height, int *exit_codes)
 {
-	char		buf[BUF_SIZE + 1];
-	int			ret;
-	int			counter;
-	char		*ptr;
+	int		i;
+	int		pipes;
 
-	ret = 0;
-	counter = 0;
-	ptr = buf;
-	ret = read(0, ptr, BUF_SIZE);
-	while (ret)
+	i = 0;
+	pipes = 0;
+	while (i < 5)
 	{
-		counter += ret;
-		ptr = ptr + ret;
-		ret = read(0, ptr, BUF_SIZE);
+		if (exit_codes[i] == 1)
+		{
+			if (pipes)
+			{
+				ft_putstr(" || ");
+				pipes = 0;
+			}
+			ft_putstr("[rush-0");
+			ft_putnbr(i);
+			ft_putstr("] [");
+			ft_putnbr(width);
+			ft_putstr("] [");
+			ft_putnbr(height);
+			ft_putstr("]");
+			pipes = 1;
+		}
+		i++;
 	}
-	buf[counter] = '\0';
-	is_rush(get_width(buf), get_height(buf), buf);
-	ft_putstr("\n");
-	return (0);
 }
