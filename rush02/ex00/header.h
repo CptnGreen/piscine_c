@@ -6,7 +6,7 @@
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/16 19:08:01 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 23:15:27 by slisandr         ###   ########.fr       */
+/*   Updated: 2019/03/17 18:36:33 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@
 # include <stdio.h>
 
 void		is_rush(char *str);
-void		is_rush00(char *str, int x, int y);
-//void		is_rush01(char *str, int x, int y);
-//void		is_rush02(char *str, int x, int y);
-//void		is_rush03(char *str, int x, int y);
+void		is_rush00(char *str, int w, int h);
+void		is_rush01(char *str, int w, int h);
+void		is_rush02(char *str, int w, int h);
+void		is_rush03(char *str, int w, int h);
+void		is_rush04(char *str, int w, int h);
 
 int			is_symbol(char c, char symb);
 
