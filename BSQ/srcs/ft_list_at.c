@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_width.c                                        :+:      :+:    :+:   */
+/*   ft_list_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/16 19:22:24 by slisandr          #+#    #+#             */
-/*   Updated: 2019/03/16 23:12:46 by slisandr         ###   ########.fr       */
+/*   Created: 2019/03/13 22:38:38 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/13 23:01:27 by slisandr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int		get_width(char *str)
+t_list		*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	int		i;
+	t_list			*my_list;
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\n' && str[i] != '\0')
-		i++;
-	return (i);
+	my_list = begin_list;
+	if (my_list)
+	{
+		while (i < nbr - 1)
+		{
+			my_list = my_list->next;
+			i++;
+		}
+		return (my_list);
+	}
+	else
+		return (0);
 }

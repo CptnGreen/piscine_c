@@ -1,0 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_last.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: slisandr <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/03/13 18:03:14 by slisandr          #+#    #+#             */
+/*   Updated: 2019/03/13 21:53:04 by slisandr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "header.h"
+
+t_list	*ft_list_last(t_list *begin_list)
+{
+	t_list	*node;
+
+	node = begin_list;
+	while (node->next)
+		node = node->next;
+	return (node);
+}
